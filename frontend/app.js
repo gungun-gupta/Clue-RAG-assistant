@@ -93,7 +93,7 @@ function setupEventListeners() {
 
     // Debug drawer toggle
     openDebugBtn.addEventListener("click", () => {
-        debugDrawer.classList.remove("closed");
+        debugDrawer.classList.toggle("closed");
     });
 
     closeDebugBtn.addEventListener("click", () => {
@@ -323,7 +323,6 @@ async function submitQuery() {
                         // Populate debug drawer if debug data returned
                         if (parsed.debug_info) {
                             renderDebugData(parsed.debug_info);
-                            debugDrawer.classList.remove("closed");
                         }
                     } else if (parsed.event === "token") {
                         accumulatedTokens += parsed.token;
@@ -375,15 +374,17 @@ function createAssistantMessage() {
     msg.className = "message assistant-message";
     msg.innerHTML = `
         <div class="message-avatar">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <polyline points="7 8 10 10.5 7 13"></polyline>
+                <line x1="13" y1="13" x2="17" y2="13"></line>
             </svg>
         </div>
         <div class="message-body">
             <div class="message-meta">
-                <span class="sender-name">Antigravity RAG</span>
+                <span class="sender-name">Clue</span>
                 <span class="query-badge-container"></span>
             </div>
             <div class="message-content markdown-body">

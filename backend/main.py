@@ -11,7 +11,7 @@ from backend.llm.ollama_client import ollama_client
 from backend.database.chroma import db_manager
 
 app = FastAPI(
-    title="Technical Documentation RAG",
+    title="Clue - Technical Documentation RAG",
     description="Code-Aware Local RAG Application for Technical Documentation using Ollama & ChromaDB",
     version="1.0.0"
 )
