@@ -1,0 +1,24 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables & virtual envs
+.env
+.venv/
+venv/
+env/
+
+# Pytest & caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Chroma local vector database
+data/chroma/*
+!data/chroma/.gitkeep
+
+# System & logs
+.DS_Store
+Thumbs.db
+*.log
